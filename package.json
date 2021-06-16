@@ -1,0 +1,19 @@
+{
+  "name": "idu-finalapi",
+  "version": "1.0.0",
+  "description": "할일 그룹 만들기, 할일 만들기(Todo App)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eebbni/idu-finalApi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eebbni/idu-finalApi/issues"
+  },
+  "homepage": "https://github.com/eebbni/idu-finalApi#readme"
+}
