@@ -5,28 +5,37 @@ var Sequelize = require('sequelize');
 const db = {};
 const sequelize = new Sequelize('example', 'dev', 'secret', { dialect: 'mysql', host: '127.0.0.1',port:3307 });
 
-const Group = sequelize.define('Group', {
-   title: Sequelize.STRING(100)
+const Brand = sequelize.define('Brand', {
+   brand: Sequelize.STRING(100)
  }, { indexes: [
     {
         unique: true,
-        fields: ['title']
+        fields: ['brand']
     }
  ],
  timestamps: false });
 
-const Todo = sequelize.define('Todo', {
-   title: Sequelize.STRING(100),
-   status : Sequelize.STRING(100)
-}, { timestamps: false });
+const Cafe = sequelize.define('Cafes', {
+   location: Sequelize.STRING(100),
+   name: Sequelize.STRING(100),
+   operatingtimeS: Sequelize.STRING(100),
+   operatingtimeE: Sequelize.STRING(100),
+   content: Sequelize.STRING(100),
+   created_at: {
+      type: Sequelize.DATE,
+      allowNull: false,
+      defalutValue: sequelize.literal('now()'),
+  },
+}, { 
+   timestamps: false });
 
 async function doOneToMany1() {
-   Group.hasMany(Todo, { foreignKey: 'groupId' });
-   // Memebers에 GroupId FK 생성
+   Brand.hasMany(Cafe, { foreignKey: 'brandId' });
+   // Memebers에 BrandId FK 생성
 
    try {
-      await Group.sync();
-      await Todo.sync();
+      await Brand.sync();
+      await Cafe.sync();
    }
    catch (error) {
       console.log('Error :', error);
@@ -38,7 +47,7 @@ async function doOneToMany1() {
    await doOneToMany1();
 })();
 
-db.Group = Group;
-db.Todo = Todo;
+db.Brand = Brand;
+db.Cafe = Cafe;
 
 module.exports = db;

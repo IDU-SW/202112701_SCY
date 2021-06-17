@@ -1,41 +1,39 @@
-const {Todo} = require('../model');
-const {Group} = require('../model');
+const {Cafe} = require('../model');
+const {Brand} = require('../model');
 
-exports.TodoList = async (req, res) => {
+exports.CafeList = async (req, res) => {
     try {
-      const result = await Todo.findAll({});
+      const result = await Cafe.findAll({});
       res.json(result);
     } catch (e) {
-      //console.log(e);
       res.status(404).send("not found");
     }
   }
 
-exports.TodoDoneList = async (req, res) => {
+exports.CafeDoneList = async (req, res) => {
   try {
-    const result = await Todo.findAll({ where: { status: 'DONE' }});
+    const result = await Cafe.findAll({ where: { status: 'DONE' }});
     res.json(result);
   } catch (e) {
-    //console.log(e);
     res.status(404).send("not found");
   }
 }
 
-exports.TodoAdd = async (req, res) => {
+exports.CafeAdd = async (req, res) => {
   try {
     const { title, status, groupId } = req.body;
-    const group = await Group.findByPk(groupId);
+    const group = await Brand.findByPk(groupId);
     //없는 그룹의 번호면 할일 추가 안함
     if(!group)
     {
       throw new Error("Error");
     }
-    const ret = await Todo.create({
+    const ret = await Cafe.create({
         title: title,
         status: status
     }, {logging: false});
 
-    await group.addTodo(ret);
+    await group.addCafe(ret);
     const newData = ret.dataValues;
     console.log(newData);
     console.log('Create success');
@@ -47,10 +45,10 @@ exports.TodoAdd = async (req, res) => {
   }
 }
 
-exports.TodoDone = async (req, res) => {
+exports.CafeDone = async (req, res) => {
   try {
     const { title } = req.body;
-    let result = await Todo.update(
+    let result = await Cafe.update(
         { status: 'DONE' },
         { where: { title: title }});
     console.log('Modify success :', title , "noDONE -> DONE");
