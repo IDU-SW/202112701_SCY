@@ -21,16 +21,19 @@ exports.CafeDoneList = async (req, res) => {
 
 exports.CafeAdd = async (req, res) => {
   try {
-    const { title, status, groupId } = req.body;
-    const group = await Brand.findByPk(groupId);
+    const { brandId,location, name, operatingtimeS ,operatingtimeE,content} = req.body;
+    const group = await Brand.findByPk(brandId);
     //없는 그룹의 번호면 할일 추가 안함
     if(!group)
     {
       throw new Error("Error");
     }
     const ret = await Cafe.create({
-        title: title,
-        status: status
+      location : location,
+      name : name,
+      operatingtimeS : operatingtimeS,
+      operatingtimeE : operatingtimeE,
+      content : content,
     }, {logging: false});
 
     await group.addCafe(ret);

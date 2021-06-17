@@ -21,13 +21,8 @@ const Cafe = sequelize.define('Cafes', {
    operatingtimeS: Sequelize.STRING(100),
    operatingtimeE: Sequelize.STRING(100),
    content: Sequelize.STRING(100),
-   created_at: {
-      type: Sequelize.DATE,
-      allowNull: false,
-      defalutValue: sequelize.literal('now()'),
-  },
 }, { 
-   timestamps: false });
+   timestamps: true });
 
 async function doOneToMany1() {
    Brand.hasMany(Cafe, { foreignKey: 'brandId' });
