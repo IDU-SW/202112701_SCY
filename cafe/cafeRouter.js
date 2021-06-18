@@ -6,7 +6,7 @@ const {CafeList,CafeDetail,CafeOpenList,CafeInsert,CafeStatusUpdate,CafeDelete} 
 CafeRouter.get('/cafeList', CafeList);
 
 //카페 상세보기
-CafeRouter.get('/cafeDetail/:cafeName', CafeDetail);
+CafeRouter.get('/cafeDetail/:cafeId', CafeDetail);
 
 //현재 오픈한 카페 보기
 CafeRouter.get('/cafeOpenList', CafeOpenList);
@@ -15,9 +15,9 @@ CafeRouter.get('/cafeOpenList', CafeOpenList);
 CafeRouter.post('/cafeInsert/:brandId', CafeInsert);
 
 //카페 상태(status) 수정
-CafeRouter.put('/cafeStatusUpdate/:cafeName', CafeStatusUpdate);
+CafeRouter.put('/cafeStatusUpdate/:cafeId', CafeStatusUpdate);
 
 //카페 삭제
-CafeRouter.delete('/cafeDelete/:cafeName', CafeDelete);
+CafeRouter.delete('/cafeDelete/:cafeId', CafeDelete);
 
 module.exports = CafeRouter;

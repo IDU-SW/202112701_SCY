@@ -14,8 +14,8 @@ exports.CafeList = async (req, res) => {
 //카페 상세보기
 exports.CafeDetail = async (req, res) => {
   try {
-    const { cafeName } = req.params;
-    const result = await Cafe.findAll({ where: { name: cafeName }});
+    const { cafeId } = req.params;
+    const result = await Cafe.findAll({ where: { id: cafeId }});
     res.json(result);
   } catch (e) {
     res.status(404).send("해당 이름의 카페가 없습니다.");
@@ -72,11 +72,11 @@ exports.CafeStatusUpdate = async (req, res) => {
     {
         throw "상태값이 입력되지 않았습니다.";
     }
-    const { cafeName } = req.params;
+    const { cafeId } = req.params;
     const { status} = req.body;
     let result = await Cafe.update(
         { status: status},
-        { where: { name: cafeName }});
+        { where: { id: cafeId }});
     console.log('Modify success :', result);
     res.send("카페 상태 수정 성공");
   }
@@ -93,9 +93,9 @@ exports.CafeDelete = async (req, res) => {
     {
         throw "삭제할 카페 이름이 입력되지 않았습니다.";
     }
-    const { cafeName } = req.params;
+    const { cafeId } = req.params;
     let result = await Cafe.destroy(
-        { where: { name: cafeName }});
+        { where: { id: cafeId }});
     console.log('delete sucess', result);
     res.send("삭제 성공");
   }
