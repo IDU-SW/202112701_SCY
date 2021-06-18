@@ -18,9 +18,10 @@ const Brand = sequelize.define('Brand', {
 const Cafe = sequelize.define('Cafes', {
    location: Sequelize.STRING(100),
    name: Sequelize.STRING(100),
-   operatingtimeS: Sequelize.STRING(100),
-   operatingtimeE: Sequelize.STRING(100),
+   operatingtimeS: Sequelize.INTEGER,
+   operatingtimeE: Sequelize.INTEGER,
    content: Sequelize.STRING(100),
+   status: Sequelize.STRING(100)
 }, { 
    timestamps: true });
 
