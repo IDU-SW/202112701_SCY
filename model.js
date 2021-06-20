@@ -27,7 +27,7 @@ const Cafe = sequelize.define('Cafes', {
 
 async function doOneToMany1() {
    Brand.hasMany(Cafe, { foreignKey: 'brandId' });
-   // Memebers에 BrandId FK 생성
+   // Cafe에 BrandId FK 생성
 
    try {
       await Brand.sync();
