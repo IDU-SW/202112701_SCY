@@ -6,7 +6,7 @@ const {BrandList,BrandCafeList,BrandInsert,BrandUpdate} = require('./brandContro
 BrandRouter.get('/brandlist', BrandList);
 
 //브랜드 내 카페목록 보기
-BrandRouter.get('/brandCafelist/:brandId', BrandCafeList);
+BrandRouter.get('/brandcafelist/:brandId', BrandCafeList);
 
 //브랜드 추가 하기
 BrandRouter.post('/brandinsert', BrandInsert);

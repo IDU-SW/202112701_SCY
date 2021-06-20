@@ -9,7 +9,7 @@ CafeRouter.get('/cafelist', CafeList);
 CafeRouter.get('/cafedetail/:cafeId', CafeDetail);
 
 //현재 오픈한 카페 보기
-CafeRouter.get('/cafeopenList', CafeOpenList);
+CafeRouter.get('/cafeopenlist', CafeOpenList);
 
 //카페 추가 하기
 CafeRouter.post('/cafeinsert/:brandId', CafeInsert);
