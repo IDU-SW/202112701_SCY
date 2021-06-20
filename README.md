@@ -17,7 +17,7 @@ npm i
 |       항목            |          URL           | Method  |
 | :--------------------:| :--------------------: | :----: |
 |[전체 브랜드 보기](#전체-브랜드-보기)      |        /brand/brandlist        |  GET   |
-|[브랜드 내 카페목록 보기](#브랜드-내-카페목록-보기)|      /brand/brandCafelist/:brandId      |  GET   |
+|[브랜드 내 카페목록 보기](#브랜드-내-카페목록-보기)|      /brand/brandcafelist/:brandId      |  GET   |
 |[브랜드 추가](#브랜드-추가)          |      /brand/brandinsert       |  POST   |
 |[브랜드 수정](#브랜드-수정)       |    /brand/brandupdate/:brandId    |  PUT   |
 |[전체 카페 보기](#전체-카페-보기)        |    /cafe/cafelist     |  GET   |
@@ -35,7 +35,7 @@ npm i
 #### example URL
 
 ```
-http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/brand/brandList
+http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/brand/brandlist
 ```
 
 #### 요청
@@ -72,7 +72,7 @@ http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/brand/brandLi
 #### example URL
 
 ```
-http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/brand/brandCafelist/3
+http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/brand/brandcafelist/3
 ```
 
 #### 요청
@@ -109,7 +109,7 @@ http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/brand/brandCa
 #### example URL
 
 ```
-http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/brand/brandInsert
+http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/brand/brandinsert
 ```
 
 #### 요청
@@ -120,7 +120,7 @@ http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/brand/brandIn
 |   URL 예    | /brand/brandinsert         |
 | 요청 메소드 | POST              |
 
-##### Request 예
+##### Request 예(메세지 타입 : JSON)
 
 ```
 {
@@ -141,7 +141,7 @@ http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/brand/brandIn
 #### example URL
 
 ```
-http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/brand/brandUpdate/3
+http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/brand/brandupdate/3
 ```
 
 #### 요청
@@ -149,10 +149,10 @@ http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/brand/brandUp
 |      항목   |  설명|
 | :---------: | ---------------- |
 |     URL     | /brand/brandupdate/:brandId        |
-|   URL 예    | /brand/brandUpdate/3         |
+|   URL 예    | /brand/brandupdate/3         |
 | 요청 메소드 | PUT              |
 
-##### Request 예
+##### Request 예(메세지 타입 : JSON)
 
 ```
 {
@@ -173,7 +173,7 @@ http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/brand/brandUp
 #### example URL
 
 ```
-http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/cafe/cafeList
+http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/cafe/cafelist
 ```
 
 #### 요청
@@ -257,7 +257,7 @@ http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/cafe/cafedeta
 #### example URL
 
 ```
-http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/cafe/cafeopenList
+http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/cafe/cafeopenlist
 ```
 
 #### 요청
@@ -304,7 +304,7 @@ http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/cafe/cafeinse
 |   URL 예    | /cafe/cafeinsert/2       |
 | 요청 메소드 | POST              |
 
-##### Request 예
+##### Request 예(메세지 타입 : JSON)
 
 ```
 {
@@ -343,11 +343,11 @@ http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/cafe/cafestat
 
 |      항목   |  설명|
 | :---------: | ---------------- |
-|     URL     | /cafestatusupdate/:cafeId       |
+|     URL     | /cafe/cafestatusupdate/:cafeId       |
 |   URL 예    | /cafe/cafestatusupdate/2       |
 | 요청 메소드 | PUT              |
 
-##### Request 예
+##### Request 예(메세지 타입 : JSON)
 
 ```
 {
@@ -374,7 +374,7 @@ http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/cafe/cafedele
 
 |      항목   |  설명|
 | :---------: | ---------------- |
-|     URL     | /cafedelete/:cafeId       |
+|     URL     | /cafe/cafedelete/:cafeId       |
 |   URL 예    | /cafe/cafedelete/1       |
 | 요청 메소드 | DELETE              |
 
@@ -384,4 +384,38 @@ http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/cafe/cafedele
 카페 삭제 성공
 ```
 
----
+- - -
+- - -
+- - -
+
+##### 데이터베이스 설계
+
+###### Table name
+
+Brands
+
+###### Column
+
+id / INT(11) / primary Key, Auto Increment
+brand / VARCHAR(100) / unique key
+
+- - -
+
+###### Table name
+
+Cafes
+
+###### Column
+
+id / INT(11) / primary Key, Auto Increment
+location / VARCHAR(100)
+name / VARCHAR(100)
+operatingtimeS / INT(11)
+operatingtimeE / INT(11)
+content / VARCHAR(100)
+status / VARCHAR(100)
+createAt / DATETIME
+updatedAt / DATETIME
+brandId / INT(11) / foreign Key
+
+Brands : Cafes => 1:N 관계
