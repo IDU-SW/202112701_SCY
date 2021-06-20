@@ -3,7 +3,11 @@ const {Brand} = require('../model');
 
 exports.BrandList = async (req, res) => {
     try {
-      const result = await Brand.findAll({});
+      const result = await Brand.findAll({
+        order:[
+          ['id','ASC']
+        ]
+      });
       res.json(result);
     } catch (e) {
       res.status(404).send("브랜드 리스트가 없습니다.");
@@ -13,7 +17,11 @@ exports.BrandList = async (req, res) => {
 exports.BrandCafeList = async (req, res) => {
   try {
     const { brandId } = req.params;
-    const result = await Cafe.findAll({ where: { brandId: brandId }});
+    const result = await Cafe.findAll({ 
+      where: { brandId: brandId },
+      order:[
+        ['id','ASC']
+      ]});
     res.json(result);
   } catch (e) {
     res.status(404).send("해당 브랜드의 카페리스트가 없습니다.");

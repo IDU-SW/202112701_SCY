@@ -4,7 +4,11 @@ const {Brand} = require('../model');
 //전체 카페 보기
 exports.CafeList = async (req, res) => {
     try {
-      const result = await Cafe.findAll({});
+      const result = await Cafe.findAll({
+        order:[
+          ['id','ASC']
+        ]
+      });
       res.json(result);
     } catch (e) {
       res.status(404).send("카페 리스트가 없습니다.");
@@ -15,7 +19,12 @@ exports.CafeList = async (req, res) => {
 exports.CafeDetail = async (req, res) => {
   try {
     const { cafeId } = req.params;
-    const result = await Cafe.findAll({ where: { id: cafeId }});
+    const result = await Cafe.findAll({ 
+      where: { id: cafeId },
+      order:[
+        ['id','ASC']
+      ]
+    });
     res.json(result);
   } catch (e) {
     res.status(404).send("해당 이름의 카페가 없습니다.");
@@ -25,7 +34,12 @@ exports.CafeDetail = async (req, res) => {
 //현재 오픈한 카페 보기
 exports.CafeOpenList = async (req, res) => {
   try {
-    const result = await Cafe.findAll({ where: { status: 'OPEN' }});
+    const result = await Cafe.findAll({ 
+      where: { status: 'OPEN' },
+      order:[
+        ['id','ASC']
+      ]
+    });
     res.json(result);
   } catch (e) {
     res.status(404).send("현재 오픈한 카페가 없습니다.");
