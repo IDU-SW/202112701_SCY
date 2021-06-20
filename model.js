@@ -3,7 +3,7 @@
 //
 var Sequelize = require('sequelize');
 const db = {};
-const sequelize = new Sequelize('example', 'dev', 'secret', { dialect: 'mysql', host: '127.0.0.1',port:3307 });
+const sequelize = new Sequelize('example', 'dev', 'secret', { dialect: 'mysql', host: 'database-2.c7oegoczl1tw.ap-northeast-2.rds.amazonaws.com',port:3306 });
 
 const Brand = sequelize.define('Brand', {
    brand: Sequelize.STRING(100)
