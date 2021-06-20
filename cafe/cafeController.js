@@ -105,16 +105,16 @@ exports.CafeDelete = async (req, res) => {
   try {
     if(!req.params)
     {
-        throw "삭제할 카페 이름이 입력되지 않았습니다.";
+        throw "삭제할 카페 아이디가 입력되지 않았습니다.";
     }
     const { cafeId } = req.params;
     let result = await Cafe.destroy(
         { where: { id: cafeId }});
     console.log('delete sucess', result);
-    res.send("삭제 성공");
+    res.send("카페 삭제 성공");
   }
   catch (error) {
     console.log('Error :', error);
-    res.json("삭제 실패");
+    res.json("카페 삭제 실패");
   }
 }
