@@ -388,7 +388,7 @@ http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/cafe/cafedele
 - - -
 - - -
 
-##### 데이터베이스 설계
+#### 데이터베이스 설계
 
 ###### Table name
 
@@ -396,8 +396,8 @@ Brands
 
 ###### Column
 
-id / INT(11) / primary Key, Auto Increment
-brand / VARCHAR(100) / unique key
+id / INT(11) / primary Key, Auto Increment<br/>
+brand / VARCHAR(100) / unique key<br/>
 
 - - -
 
@@ -407,15 +407,15 @@ Cafes
 
 ###### Column
 
-id / INT(11) / primary Key, Auto Increment
-location / VARCHAR(100)
-name / VARCHAR(100)
-operatingtimeS / INT(11)
-operatingtimeE / INT(11)
-content / VARCHAR(100)
-status / VARCHAR(100)
-createAt / DATETIME
-updatedAt / DATETIME
-brandId / INT(11) / foreign Key
+id / INT(11) / primary Key, Auto Increment<br/>
+location / VARCHAR(100)<br/>
+name / VARCHAR(100)<br/>
+operatingtimeS / INT(11)<br/>
+operatingtimeE / INT(11)<br/>
+content / VARCHAR(100)<br/>
+status / VARCHAR(100)<br/>
+createAt / DATETIME<br/>
+updatedAt / DATETIME<br/>
+brandId / INT(11) / foreign Key<br/>
 
 Brands : Cafes => 1:N 관계
