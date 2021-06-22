@@ -32,6 +32,8 @@ npm i
 
 ### 📄전체 브랜드 보기 (ejs로 구현)
 
+![전체브랜드보기](./assets/2.JPG)
+
 #### example URL
 
 ```
@@ -46,28 +48,11 @@ http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/brand/brandli
 |   URL 예    | /brand/brandlist         |
 | 요청 메소드 | GET              |
 
-##### Response 메세지 예
-
-```
-[
-    {
-        "id": 1,
-        "brand": "텐퍼센트"
-    },
-    {
-        "id": 2,
-        "brand": "할리스"
-    },
-    {
-        "id": 3,
-        "brand": "투썸"
-    }
-]
-```
-
 ---
 
 ### 📄브랜드 내 카페목록 보기 (ejs로 구현)
+
+![전체브랜드보기](./assets/3.JPG)
 
 #### example URL
 
@@ -83,28 +68,11 @@ http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/brand/brandca
 |   URL 예    | /brand/brandcafelist/3         |
 | 요청 메소드 | GET              |
 
-##### Response 메세지 예
-
-```
-[
-    {
-        "id": 1,
-        "location": "서울",
-        "name": "투썸 하계점",
-        "operatingtimeS": 9,
-        "operatingtimeE": 22,
-        "content": "내용내용",
-        "status": "OPEN",
-        "createdAt": "2021-06-20T14:34:22.000Z",
-        "updatedAt": "2021-06-20T14:34:22.000Z",
-        "brandId": 3
-    }
-]
-```
-
 ---
 
 ### 📄브랜드 추가 (ejs로 구현)
+
+![전체브랜드보기](./assets/2.JPG)
 
 #### example URL
 
@@ -126,12 +94,6 @@ http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/brand/brandin
 {
     "brand":"스타벅스"
 }
-```
-
-##### Response 메세지 예
-
-```
-브랜드 이름 추가 성공
 ```
 
 ---
@@ -170,6 +132,8 @@ http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/brand/brandup
 
 ### 📄전체 카페 보기 (ejs로 구현)
 
+![전체브랜드보기](./assets/1.JPG)
+
 #### example URL
 
 ```
@@ -183,37 +147,6 @@ http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/cafe/cafelist
 |     URL     | /cafe/cafelist        |
 |   URL 예    | /cafe/cafelist         |
 | 요청 메소드 | GET              |
-
-##### Response 메세지 예
-
-```
-[
-    {
-        "id": 1,
-        "location": "서울",
-        "name": "투썸 하계점",
-        "operatingtimeS": 9,
-        "operatingtimeE": 22,
-        "content": "내용내용",
-        "status": "OPEN",
-        "createdAt": "2021-06-20T14:34:22.000Z",
-        "updatedAt": "2021-06-20T14:34:22.000Z",
-        "brandId": 3
-    },
-    {
-        "id": 2,
-        "location": "서울",
-        "name": "투썸 노원점",
-        "operatingtimeS": 9,
-        "operatingtimeE": 22,
-        "content": "내용내용",
-        "status": "CLOSE",
-        "createdAt": "2021-06-20T14:49:38.000Z",
-        "updatedAt": "2021-06-20T14:49:38.000Z",
-        "brandId": 3
-    }
-]
-```
 
 ---
 ### 📄카페 상세보기
