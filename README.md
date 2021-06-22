@@ -16,11 +16,11 @@ npm i
 
 |       항목            |          URL           | Method  |
 | :--------------------:| :--------------------: | :----: |
-|[전체 브랜드 보기](#전체-브랜드-보기)      |        /brand/brandlist        |  GET   |
-|[브랜드 내 카페목록 보기](#브랜드-내-카페목록-보기)|      /brand/brandcafelist/:brandId      |  GET   |
-|[브랜드 추가](#브랜드-추가)          |      /brand/brandinsert       |  POST   |
+|[전체 브랜드 보기 (ejs로 구현)](#전체-브랜드-보기)      |        /brand/brandlist        |  GET   |
+|[브랜드 내 카페목록 보기 (ejs로 구현)](#브랜드-내-카페목록-보기)|      /brand/brandcafelist/:brandId      |  GET   |
+|[브랜드 추가 (ejs로 구현)](#브랜드-추가)          |      /brand/brandinsert       |  POST   |
 |[브랜드 수정](#브랜드-수정)       |    /brand/brandupdate/:brandId    |  PUT   |
-|[전체 카페 보기](#전체-카페-보기)        |    /cafe/cafelist     |  GET   |
+|[전체 카페 보기 (ejs로 구현)](#전체-카페-보기)        |    /cafe/cafelist     |  GET   |
 |[카페 상세보기](#카페-상세보기)          | /cafe/cafedetail/:cafeId |  GET   |
 |[현재 오픈한 카페 보기](#현재-오픈한-카페-보기)  |        /cafe/cafeopenList       |  GET  |
 |[카페 추가](#카페-추가)             |   /cafe/cafeinsert/:brandId    |  POST  |
