@@ -30,7 +30,7 @@ npm i
 
 ---
 
-### 📄전체 브랜드 보기
+### 📄전체 브랜드 보기 (ejs로 구현)
 
 #### example URL
 
@@ -67,7 +67,7 @@ http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/brand/brandli
 
 ---
 
-### 📄브랜드 내 카페목록 보기
+### 📄브랜드 내 카페목록 보기 (ejs로 구현)
 
 #### example URL
 
@@ -104,7 +104,7 @@ http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/brand/brandca
 
 ---
 
-### 📄브랜드 추가
+### 📄브랜드 추가 (ejs로 구현)
 
 #### example URL
 
@@ -168,7 +168,7 @@ http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/brand/brandup
 
 ---
 
-### 📄전체 카페 보기
+### 📄전체 카페 보기 (ejs로 구현)
 
 #### example URL
 
