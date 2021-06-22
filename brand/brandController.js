@@ -6,9 +6,11 @@ exports.BrandList = async (req, res) => {
       const result = await Brand.findAll({
         order:[
           ['id','ASC']
-        ]
+        ],
+        raw: true
       });
-      res.json(result);
+      // res.json(result);
+      res.render('brand/list', {data : result});
     } catch (e) {
       res.status(404).send("브랜드 리스트가 없습니다.");
     }

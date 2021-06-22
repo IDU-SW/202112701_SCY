@@ -5,6 +5,10 @@ app.use(bodyParser.json());
 
 const CafeRouter = require('./cafe/cafeRouter');
 const BrandRouter = require('./brand/brandRouter');
+
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+
 app.use("/cafe",CafeRouter);
 app.use("/brand",BrandRouter);
 
