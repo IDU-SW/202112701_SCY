@@ -5,11 +5,18 @@
    </head>
 <body>
 
-  <p>js data : <% for (var i=0; i <data.length; i++){
-    var no = data[i].no;
+  <p><% for (var i=0; i <data.length; i++){
+    var id = data[i].id;
     var name = data[i].brand;%>
-    <li>#<%= i %>- <%= no %> : <%= name %></li>
+    <li>
+      #<%= id %>- : <%= name %> <br>
+      <a href="/brand/brandcafelist/<%= id %>">카페리스트</a>
+    </li>
 <% } %></p>
+<form action="/brand/brandinsert" method="post">
+  <input type="text" id="brand" name="brand" placeholder="브랜드 이름을 입력하세요.">
+  <input type="submit" onclick="" value="추가">
+</form>
 
 </body>
 </html>

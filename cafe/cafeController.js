@@ -9,7 +9,7 @@ exports.CafeList = async (req, res) => {
           ['id','ASC']
         ]
       });
-      res.json(result);
+      res.render('cafe/list', {data : result});
     } catch (e) {
       res.status(404).send("카페 리스트가 없습니다.");
     }
