@@ -57,12 +57,12 @@ exports.BrandUpdate = async (req, res) => {
         throw "브랜드 아이디가 입력되지 않았습니다.";
     }
     const { brandId } = req.params;
-    const reqBody = req.body;
+    const { brand } = req.body;
     const ret = await Brand.update(
-        {brand: reqBody.brand},
+        {brand: brand},
         {where: { id: brandId }});
         console.log('Modify success :', brand);
-        res.redirect('/brand/brandlist');
+        res.send("브랜드 이름 수정 성공");
   }
   catch (error) {
     console.log('Error : ', error);
