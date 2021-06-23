@@ -24,7 +24,7 @@ exports.BrandCafeList = async (req, res) => {
       order:[
         ['id','ASC']
       ]});
-      res.render('brand/cafelist', {data : result});
+      res.render('brand/cafelist', {id : brandId , data : result});
   } catch (e) {
     res.status(404).send("해당 브랜드의 카페리스트가 없습니다.");
   }

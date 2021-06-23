@@ -53,7 +53,7 @@ http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/brand/brandli
 
 ### 📄브랜드 내 카페목록 보기 (ejs로 구현)
 
-![브랜드내카페목록](./assets/BRAND.JPG)
+![브랜드내카페목록](./assets/brand.JPG)
 
 #### example URL
 
@@ -244,7 +244,7 @@ http://ec2-54-180-68-123.ap-northeast-2.compute.amazonaws.com:3000/cafe/cafeopen
 ---
 ### 📄카페 추가 (ejs로 구현)
 
-![카페추가](./assets/BRAND.JPG)
+![카페추가](./assets/brand.JPG)
 
 #### example URL
 
