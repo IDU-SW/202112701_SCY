@@ -5,12 +5,22 @@
    </head>
 <body>
 
+  <h1>브랜드 목록</h1>
+  <br>
+
   <p><% for (var i=0; i <data.length; i++){
     var id = data[i].id;
     var name = data[i].brand;%>
     <li>
-      #<%= id %>- : <%= name %> <br>
-      <a href="/brand/brandcafelist/<%= id %>">카페리스트</a>
+      #<%= id %>- : <%= name %> <br>  <a href="/brand/brandcafelist/<%= id %>"><%= name %> 카페리스트</a>
+      <form action="/brand/brandupdate/<%= id %>?_method=PUT" method="post">
+        <input type="text" id="brand" name="brand" value="<%= name %>" placeholder="수정할 이름을 입력하세요.">
+        <input type="submit" value="수정">
+      </form>
+      <form action="/brand/branddelete/<%= id %>?_method=DELETE" method="post">
+        <input type="submit" value="삭제">
+      </form>
+      <br>  <br>  
     </li>
 <% } %></p>
 <form action="/brand/brandinsert" method="post">

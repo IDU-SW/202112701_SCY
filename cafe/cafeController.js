@@ -25,7 +25,7 @@ exports.CafeDetail = async (req, res) => {
         ['id','ASC']
       ]
     });
-    res.json(result);
+    res.render('cafe/detail', {data : result});
   } catch (e) {
     res.status(404).send("해당 이름의 카페가 없습니다.");
   }
@@ -40,7 +40,7 @@ exports.CafeOpenList = async (req, res) => {
         ['id','ASC']
       ]
     });
-    res.json(result);
+    res.render('cafe/detail', {data : result});
   } catch (e) {
     res.status(404).send("현재 오픈한 카페가 없습니다.");
   }
@@ -51,6 +51,7 @@ exports.CafeInsert = async (req, res) => {
   try {
     const { brandId } = req.params;
     const { location, name, operatingtimeS ,operatingtimeE,content,status} = req.body;
+    backURL=req.header('Referer') || '/'; //이전페이지
     const brand = await Brand.findByPk(brandId);
     //없는 브랜드의 번호면 할일 추가 안함
     if(!brand)
@@ -71,7 +72,7 @@ exports.CafeInsert = async (req, res) => {
     const newData = ret.dataValues;
     console.log(newData);
     console.log('Create success');
-    res.send(newData);
+    res.redirect(backURL); 
   }
   catch (error) {
     console.log('Error : ', error);
@@ -111,7 +112,7 @@ exports.CafeDelete = async (req, res) => {
     let result = await Cafe.destroy(
         { where: { id: cafeId }});
     console.log('delete sucess', result);
-    res.send("카페 삭제 성공");
+    res.redirect('/cafe/cafelist');
   }
   catch (error) {
     console.log('Error :', error);

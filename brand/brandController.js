@@ -62,7 +62,26 @@ exports.BrandUpdate = async (req, res) => {
         {brand: brand},
         {where: { id: brandId }});
         console.log('Modify success :', brand);
-        res.send("브랜드 이름 수정 성공");
+        res.redirect('/brand/brandlist');
+  }
+  catch (error) {
+    console.log('Error : ', error);
+    res.json("브랜드 update 실패사유 : "+ error);
+  }
+}
+
+
+exports.BrandDelete = async (req, res) => {
+  try {
+    if(!req.body)
+    {
+        throw "브랜드 아이디가 입력되지 않았습니다.";
+    }
+    const { brandId } = req.params;
+    const ret = await Brand.destroy(
+        {where: { id: brandId }});
+        console.log('delete sucess :', ret);
+        res.redirect('/brand/brandlist');
   }
   catch (error) {
     console.log('Error : ', error);

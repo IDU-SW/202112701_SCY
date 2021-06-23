@@ -4,14 +4,19 @@
    <head>
    </head>
 <body>
+  <h1>카페목록</h1>
+  <br>
 
   <p><% for (var i=0; i <data.length; i++){
     var id = data[i].id;
     var name = data[i].name;%>
     <li>
-      #<%= id %>- : <%= name %> <br><br><br>
+      #<%= id %>- : <%= name %> <br><a href="/cafe/cafedetail/<%= id %>">자세히보기 </a>
+      <form action="/cafe/cafedelete/<%= id %>?_method=DELETE" method="post">
+        <input type="submit" value="삭제">
+      </form>
     </li>
 <% } %></p>
-
+<a href="/cafe/cafeopenlist">현재 오픈한 카페보기 </a>
 </body>
 </html>
